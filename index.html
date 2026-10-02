@@ -218,6 +218,24 @@ button{font-family:inherit;color:inherit;background:none;border:none;cursor:poin
 #floatImg img{width:100%;height:100%;object-fit:cover;filter:sepia(.34) saturate(.86) contrast(1.06) brightness(.82);animation:kb 7s ease-in-out infinite alternate}
 @keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.14) translate(-6px,4px)}}
 
+
+/* ============ VIDEO PROOF / CLIENT CREDITS ============ */
+.video-gallery-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin:0 0 22px}
+#videos.sec{padding-top:clamp(48px,6vw,80px);padding-bottom:clamp(28px,4vw,48px)}
+#videos .video-grid{margin-top:8px}
+.video-gallery-head h3{font-family:var(--sans);font-size:clamp(20px,2.2vw,28px);font-weight:500;direction:ltr}
+.video-gallery-head p{max-width:42ch;color:var(--cream-60);font-size:13px;line-height:1.8;text-align:right}
+.video-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.work-video{margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--ink-2);transition:border-color .3s,transform .3s,box-shadow .3s}
+.work-video:hover{border-color:var(--gold-line);transform:translateY(-3px);box-shadow:0 18px 38px -24px rgba(0,0,0,.8)}
+.work-video video{display:block;width:100%;aspect-ratio:16/10;object-fit:contain;background:#080706}
+.work-video figcaption{display:flex;flex-direction:column;gap:4px;padding:14px 15px 16px;direction:rtl;text-align:right}
+.work-video figcaption .video-kicker{font-family:var(--sans);font-size:9px;letter-spacing:.18em;color:var(--gold);direction:ltr;text-align:right}
+.work-video figcaption strong{font-family:var(--sans);font-size:15px;font-weight:600;direction:ltr;text-align:right;color:var(--cream)}
+.work-video figcaption span:last-child{font-size:13px;color:var(--cream-60)}
+@media (max-width:1080px){.video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.video-gallery-head{align-items:start;flex-direction:column;gap:8px}}
+@media (max-width:560px){.video-grid{grid-template-columns:1fr}.work-video video{aspect-ratio:16/11}}
+
 /* ============ NUMBERS ============ */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:20px;overflow:hidden}
 .stat{background:var(--ink-2);padding:clamp(28px,3.4vw,50px) clamp(20px,2.6vw,40px);transition:background .35s}
@@ -387,6 +405,16 @@ footer{background:#080706;border-top:1px solid var(--line-soft);padding:clamp(60
   .rv{opacity:1;transform:none}
   .hero h1 .uq path{stroke-dashoffset:0}
 }
+
+.video-gallery-head{margin-top:0;margin-bottom:22px;display:flex;justify-content:space-between;gap:24px;align-items:end}
+.video-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.work-video{margin:0;background:#161410;border:1px solid rgba(220,165,76,.25);border-radius:14px;overflow:hidden;opacity:1!important;transform:none!important}
+.work-video video{width:100%;display:block;aspect-ratio:16/9;background:#0C0B09;object-fit:cover}
+.work-video figcaption{padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px}
+.work-video .video-kicker{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold,#DCA54C)}
+.work-video strong{font-size:15px;color:var(--cream,#F5F0E6)}
+.work-video figcaption span:last-child{color:rgba(245,240,230,.65);font-size:13px}
+
 </style>
 </head>
 <body id="top">
@@ -398,6 +426,7 @@ footer{background:#080706;border-top:1px solid var(--line-soft);padding:clamp(60
     <span class="logo">SU<b>B</b><span class="tag" style="margin-inline-start:10px">موسيقى الإعلانات</span></span>
   </a>
   <nav class="nav-links" aria-label="التنقل الرئيسي">
+    <a href="#videos">فيديو</a>
     <a href="#works">الأعمال</a>
     <a href="#numbers">الأرقام</a>
     <a href="#services">الخدمات</a>
@@ -429,9 +458,10 @@ footer{background:#080706;border-top:1px solid var(--line-soft);padding:clamp(60
           <span class="eq-mini" aria-hidden="true"><i></i><i></i><i></i></span>
           اسمع Music Showreel
         </button>
-        <a class="btn ghost" href="#works">شوف الأعمال
+        <a class="btn ghost" href="#videos">شوف الفيديوهات
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
         </a>
+        <a class="btn ghost" href="#works">الأعمال الصوتية</a>
       </div>
       <p class="hero-micro rv" style="--d:360ms"><span>AUDIO LOGO</span><i></i><span>TVC</span><i></i><span>RAMADAN</span><i></i><span>STEMS</span><i></i><span>MIX &amp; MASTER</span></p>
     </div>
@@ -474,12 +504,59 @@ footer{background:#080706;border-top:1px solid var(--line-soft);padding:clamp(60
     </div>
   </section>
 
+  <!-- ============ VIDEOS (front of page) ============ -->
+  <section class="sec" id="videos">
+    <div class="inner">
+      <div class="video-gallery-head rv in">
+        <div>
+          <p class="eyebrow kicker">01 — Videos / فيديو</p>
+          <h2 style="font-size:clamp(28px,3.4vw,44px);margin:0">Made for the client.<br/><em>واضح لمين.</em></h2>
+        </div>
+        <p>كل فيديو هنا عليه كارت نهاية باسم العميل بالإنجليزي والعربي — عشان نسبة الشغل بصاحبه تفضل واضحة.</p>
+      </div>
+      <div class="video-grid">
+        <figure class="work-video rv in">
+          <video controls preload="metadata" playsinline poster="video/posters/city-of-music.jpg" src="video/city-of-music.mp4" aria-label="City of Music Abu Dhabi — مدينة الموسيقى أبوظبي"></video>
+          <figcaption><span class="video-kicker">CLIENT / العميل</span><strong>City of Music Abu Dhabi</strong><span>مدينة الموسيقى أبوظبي</span></figcaption>
+        </figure>
+        <figure class="work-video rv in" style="--d:60ms">
+          <video controls preload="metadata" playsinline poster="video/posters/jahez.jpg" src="video/jahez.mp4" aria-label="Jahez — جاهز"></video>
+          <figcaption><span class="video-kicker">CLIENT / العميل</span><strong>Jahez</strong><span>جاهز</span></figcaption>
+        </figure>
+        <figure class="work-video rv in" style="--d:120ms">
+          <video controls preload="metadata" playsinline poster="video/posters/mcdonalds-ksa.jpg" src="video/mcdonalds-ksa.mp4" aria-label="McDonald's KSA — ماكدونالدز السعودية"></video>
+          <figcaption><span class="video-kicker">CLIENT / العميل</span><strong>McDonald's KSA</strong><span>ماكدونالدز السعودية</span></figcaption>
+        </figure>
+        <figure class="work-video rv in" style="--d:180ms">
+          <video controls preload="metadata" playsinline poster="video/posters/trident.jpg" src="video/trident.mp4" aria-label="Trident Egypt — ترايدنت مصر"></video>
+          <figcaption><span class="video-kicker">CLIENT / العميل</span><strong>Trident Egypt</strong><span>ترايدنت مصر</span></figcaption>
+        </figure>
+        <figure class="work-video rv in" style="--d:240ms">
+          <video controls preload="metadata" playsinline poster="video/posters/hag-ellilah.jpg" src="video/hag-ellilah.mp4" aria-label="Hag Ellilah — هاج الليلة"></video>
+          <figcaption><span class="video-kicker">CLIENT / العميل</span><strong>Hag Ellilah</strong><span>هاج الليلة</span></figcaption>
+        </figure>
+        <figure class="work-video rv in" style="--d:300ms">
+          <video controls preload="metadata" playsinline poster="video/posters/whiskinnaround.jpg" src="video/whiskinnaround.mp4" aria-label="Whiskinnaround — ويسكنيناروند"></video>
+          <figcaption><span class="video-kicker">CLIENT / العميل</span><strong>Whiskinnaround</strong><span>ويسكنيناروند</span></figcaption>
+        </figure>
+        <figure class="work-video rv in" style="--d:360ms">
+          <video controls preload="metadata" playsinline poster="video/posters/china-uae.jpg" src="video/china-uae.mp4" aria-label="China–UAE — الصين والإمارات"></video>
+          <figcaption><span class="video-kicker">CLIENT / العميل</span><strong>China–UAE</strong><span>الصين والإمارات</span></figcaption>
+        </figure>
+        <figure class="work-video rv in" style="--d:420ms">
+          <video controls preload="metadata" playsinline poster="video/posters/showreel.jpg" src="video/showreel.mp4" aria-label="Sabri Salah Showreel — شوريل صبري صلاح"></video>
+          <figcaption><span class="video-kicker">PORTFOLIO / بورتفوليو</span><strong>Sabri Salah Showreel</strong><span>شوريل صبري صلاح</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ WORKS ============ -->
   <section class="sec" id="works">
     <div class="inner">
       <div class="sec-head">
         <div class="rv">
-          <p class="eyebrow kicker">01 — Selected Works</p>
+          <p class="eyebrow kicker">02 — Selected Works</p>
           <h2>Scores that<br/><em>stuck.</em></h2>
         </div>
         <p class="sec-note rv" style="--d:130ms">اضغط ▶ تسمع التراك الأصلي من المشروع. أو افتح الصف للتفاصيل واللينك.</p>
@@ -530,8 +607,29 @@ footer{background:#080706;border-top:1px solid var(--line-soft);padding:clamp(60
           <button type="button" class="w-play" data-play="hag" aria-label="تشغيل Hag Ellilah"><svg class="ico-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="ico-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg></button>
           <span class="w-arrow" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         </div>
+
+        <div class="w-row rv" style="--d:450ms" role="button" tabindex="0" data-key="whisk" data-tilt="2.5" data-img="https://picsum.photos/seed/sub-whisk/560/700.jpg">
+          <span class="w-num">06</span>
+          <h3>Whiskinnaround</h3>
+          <p class="w-desc">قطعة براند مرحة بإيقاع خفيف — مصممة لتعيش مع الحركة والقصّات السريعة من غير ما تفقد هويتها.</p>
+          <div class="w-tags"><span>Brand Film</span><span>Digital</span></div>
+          <button type="button" class="w-play" data-play="whisk" aria-label="تشغيل Whiskinnaround"><svg class="ico-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="ico-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg></button>
+          <span class="w-arrow" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </div>
+
+        <div class="w-row rv" style="--d:540ms" role="button" tabindex="0" data-key="china" data-tilt="-2" data-img="https://picsum.photos/seed/sub-china-uae/560/700.jpg">
+          <span class="w-num">07</span>
+          <h3>China–UAE</h3>
+          <p class="w-desc">موسيقى لفيلم بصري بين الصين والإمارات — طبقات واسعة وإحساس سفر يخدم الصورة من غير شرح زائد.</p>
+          <div class="w-tags"><span>Film Score</span><span>Culture</span></div>
+          <button type="button" class="w-play" data-play="china" aria-label="تشغيل China–UAE"><svg class="ico-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="ico-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:none"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg></button>
+          <span class="w-arrow" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        </div>
       </div>
-      <p class="w-list-note rv">— التراكات مستضافة هنا مباشرة. لينك النشر الأصلي جوه تفاصيل كل مشروع.</p>
+      <p class="w-list-note rv in">— التراكات مستضافة هنا مباشرة. للفيديوهات اطلعي على <a href="#videos" style="color:var(--gold);text-decoration:underline">قسم الفيديو</a> في مقدمة الصفحة.</p>
+
+
+
     </div>
   </section>
 
@@ -540,7 +638,7 @@ footer{background:#080706;border-top:1px solid var(--line-soft);padding:clamp(60
     <div class="inner">
       <div class="sec-head">
         <div class="rv">
-          <p class="eyebrow kicker">02 — By the numbers</p>
+          <p class="eyebrow kicker">03 — By the numbers</p>
           <h2 style="direction:rtl">حتى الأرقام <em class="serif-it">تُسمَع.</em></h2>
         </div>
         <p class="sec-note rv" style="--d:130ms">أرقام تقريبية من إجمالي الشغل — TVC، ديجيتال، راديو، من القاهرة للخليج.</p>
@@ -794,7 +892,15 @@ const PROJECTS = {
   hag:   {kick:"FILM SCORE · CULTURE", title:"Hag Ellilah",
           desc:"موسيقى لفيلم ثقافي قصير مرتبط بـ Visit Abu Dhabi / وزارة الثقافة. مزاج هادي وطبقي يخدم الصورة، من غير زحمة أوركسترالية زيادة عن اللزوم.",
           deliv:["سكور فيلم قصير","ميكس نهائي","نسخة للنشر","ستمز عند الطلب"],
-          audio:"audio/hag-ellilah.mp3"}
+          audio:"audio/hag-ellilah.mp3"},
+  whisk: {kick:"BRAND FILM · DIGITAL", title:"Whiskinnaround",
+          desc:"قطعة براند مرحة بإيقاع خفيف، مصممة لتعيش مع الحركة والقصّات السريعة من غير ما تفقد هويتها.",
+          deliv:["سكور أساسي","قصّات سوشيال","ساوند ديزاين","نسخة للنشر"],
+          audio:"audio/whiskinnaround.mp3"},
+  china: {kick:"FILM SCORE · CHINA–UAE", title:"China–UAE",
+          desc:"موسيقى لفيلم بصري بين الصين والإمارات — طبقات واسعة وإحساس سفر يخدم الصورة من غير شرح زائد.",
+          deliv:["سكور فيلم","ميكس نهائي","نسخة للنشر","ستمز عند الطلب"],
+          audio:"audio/china-uae.mp3"}
 };
 
 /* ═══════════ أدوات عامة ═══════════ */
